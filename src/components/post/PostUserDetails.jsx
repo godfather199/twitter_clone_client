@@ -20,24 +20,32 @@ function PostUserDetails({postUser, postOriginTime}) {
 
 
   return (
-    <div className="flex items-center gap-3 cursor-pointer">
-      {/* Post Image */}
+    <div
+      style={{ border: "3px solid purple" }}
+      className="flex items-center gap-2 cursor-pointer"
+    >
+      {/* Post user Image */}
       <div className="" onClick={handle_Profile_Navigate}>
-        <AccountCircleIcon className="w-[3rem] h-[3rem] rounded-full" />
+        <AccountCircleIcon style={{ fontSize: "3rem" }} />
       </div>
 
-      {/* Username / Name */}
-      <div
-        className="flex items-center gap-5"
-        onClick={handle_Profile_Navigate}
-      >
-        <span className="">{postUser?.name}</span>
-        <span className="">{`@${postUser?.username}`}</span>
-      </div>
+      <div className="flex  items-center gap-2">
+        {/* Username / Name */}
+        <div
+          style={{ border: "3px solid red" }}
+          className="flex flex-col md:flex-row items-center gap-2"
+          onClick={handle_Profile_Navigate}
+        >
+          <span className="text-md text-blue-600 font-bold">
+            {postUser?.name}
+          </span>
+          <span className="text-xs text-blue-200 font-semibold">{`@${postUser?.username}`}</span>
+        </div>
 
-      {/* Posted intervals of hours */}
-      <div className="">
-        <span className="">{timeAgo}</span>
+        {/* Posted intervals of hours */}
+        <div className="">
+          <span className="text-xs text-gray-500 font-semibold hidden sm:block">{timeAgo}</span>
+        </div>
       </div>
     </div>
   );

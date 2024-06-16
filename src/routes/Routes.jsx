@@ -1,4 +1,4 @@
-import {Explore, Bookmarks, LandingPage, Home, Profile} from '../pages'
+import {Explore, Bookmarks, LandingPage, Home, Profile, TrendingPosts} from '../pages'
 import {Sidebar} from '../components'
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 
@@ -20,6 +20,10 @@ function Routes() {
         {
           path: "/explore",
           element: <Explore />,
+        },
+        {
+          path: "/explore/trending-posts/:id",
+          element: <TrendingPosts />,
         },
         {
           path: "/profile/:userId",

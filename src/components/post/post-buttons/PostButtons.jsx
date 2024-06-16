@@ -1,19 +1,22 @@
-import {Comment} from '../../'
-import RepeatIcon from '@mui/icons-material/Repeat';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import {BookmarkButton, Repost, Comment, Like} from '../../'
 import { useState } from 'react';
 
 
 
 
-function PostButtons({currentPost, setCurrentPost, postId, comments}) {
-
-
+function PostButtons({
+  currentPost,
+  setCurrentPost,
+  postId,
+  comments,
+  likes,
+  repost,
+  postedBy
+}) {
   return (
     <div
       style={{ border: "3px solid red" }}
-      className=" w-[80%] flex items-center justify-between"
+      className=" w-[80%] flex items-center justify-between ml-[3.6rem]"
     >
       {/* Comment */}
       <div className="">
@@ -21,23 +24,23 @@ function PostButtons({currentPost, setCurrentPost, postId, comments}) {
           currentPost={currentPost}
           setCurrentPost={setCurrentPost}
           postId={postId}
-          comments = {comments}
+          comments={comments}
         />
       </div>
 
       {/* Repost */}
-      <div className="">
-        <RepeatIcon />
+        <div className="">
+          <Repost repost={repost} postedBy={postedBy} postId={postId} />
       </div>
 
       {/* Like */}
       <div className="">
-        <FavoriteBorderIcon />
+        <Like likes={likes} postId={postId} />
       </div>
 
       {/* Bookmark */}
       <div className="">
-        <BookmarkBorderIcon />
+        <BookmarkButton postId = {postId} />
       </div>
     </div>
   );

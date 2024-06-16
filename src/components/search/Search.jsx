@@ -32,15 +32,17 @@ function Search() {
       <div className="">
         <SearchBar
           searchText={searchText}
-          setSearchText = {setSearchText}
-          setSearchResults = {setSearchResults}
+          setSearchText={setSearchText}
+          setSearchResults={setSearchResults}
         />
       </div>
 
       {/* Display results */}
-      <div className="">
-        <SearchResult searchResults = {searchResults} />
-      </div>
+      {searchResults.length > 0 && (
+        <div className="relative">
+          <SearchResult searchResults={searchResults} />
+        </div>
+      )}
     </div>
   );
 }

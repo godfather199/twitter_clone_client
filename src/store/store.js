@@ -12,6 +12,7 @@ import {
 
 import postReducer from './slices/postSlice'
 import userReducer from './slices/userSlice'
+import hashtagReducer from './slices/hashtagSlice'
 
 
 
@@ -23,7 +24,8 @@ const persistConfig = {
 
 const combinedReducer = combineReducers({
     post: postReducer,
-    user: userReducer
+    user: userReducer,
+    hashtag: hashtagReducer
 })
 
 

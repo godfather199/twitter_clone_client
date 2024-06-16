@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { thunk_Login, thunk_Suggested_Account, thunk_Toggle_Follow } from "../thunks/userThunk"
+import { thunk_Fetch_User_By_Id, thunk_Login, thunk_Logout, thunk_Suggested_Account, thunk_Toggle_Bookmark, thunk_Toggle_Follow } from "../thunks/userThunk"
 import toast from "react-hot-toast"
 
 const initialState = {
@@ -61,6 +61,17 @@ export const userSlice = createSlice({
                 position: 'bottom-center'
             })
           })
+          .addCase(thunk_Logout.fulfilled, (state, {payload}) => {
+            const {msg} = payload
+            
+            state.current_User = null
+            state.suggested_Accounts = []
+            
+            toast.success(msg, {
+                duration: 1800,
+                position: 'bottom-center'
+            })
+          })
           .addCase(thunk_Suggested_Account.fulfilled, (state, {payload}) => {
             const {msg, suggested_Array} = payload
 
@@ -81,10 +92,30 @@ export const userSlice = createSlice({
               position: 'bottom-center'
             })
           })
+          .addCase(thunk_Fetch_User_By_Id.fulfilled, (state, {payload}) => {
+            const {msg, user} = payload
+
+            state.current_User = user
+          })
+          .addCase(thunk_Toggle_Bookmark.fulfilled, (state, {payload}) => {
+            const {msg, user} = payload
+
+            state.current_User = user
+
+            toast.success(msg, {
+              duration: 1500,
+              position: 'bottom-center'
+            })
+          })
     }
 })
 
 
-export const {set_Auth_Modal, reset_Success_State, set_User_Details, reset_Toggle_Follow_Success} = userSlice.actions
+export const {
+  set_Auth_Modal,
+  reset_Success_State,
+  set_User_Details,
+  reset_Toggle_Follow_Success,
+} = userSlice.actions;
 
 export default userSlice.reducer

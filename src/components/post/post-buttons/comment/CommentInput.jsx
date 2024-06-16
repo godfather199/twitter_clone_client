@@ -1,10 +1,17 @@
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { useDispatch, useSelector } from 'react-redux';
+import { thunk_Add_Comment } from '../../../../store/thunks/postThunk';
+import { CircularProgress } from '@mui/material';
 
 
 
-function CommentInput() {
+function CommentInput({postId}) {
+  const dispatch = useDispatch()
+
+  const {is_Loading} = useSelector(state => state.post)
+
   const [postComment, setPostComment] = useState('')
 
 
@@ -16,7 +23,10 @@ function CommentInput() {
       })
     }
 
-    console.log('Comment: ', postComment)
+    dispatch(thunk_Add_Comment({
+      comment_Text: postComment,
+      postId
+    }))    
   }
 
 
@@ -40,8 +50,13 @@ function CommentInput() {
 
       {/* Button */}
       <div className="">
-        <button onClick={handle_Add_Comment} className="">
-          Reply
+        <button
+          onClick={handle_Add_Comment}
+          className={` bg-blue-200 w-[10rem] p-2 ${
+            is_Loading ? " cursor-not-allowed" : " cursor-pointer"
+          }`}
+        >
+          {is_Loading ? <CircularProgress size={20} /> : "Reply"}
         </button>
       </div>
     </div>

@@ -17,20 +17,26 @@ const styles = {
 };
 
 
-export default function Comment({currentPost, setCurrentPost, postId, comments}) {
-    const [openComment, setOpenComment] = useState(false);
+export default function Comment({
+  currentPost,
+  setCurrentPost,
+  postId,
+  comments,
+}) {
+  const [openComment, setOpenComment] = useState(false);
 
 
-    const handle_Open_Comment = () => {
-      setCurrentPost(postId)
-      setOpenComment((prev) => !prev);
-    };
-    
-    
-    const handle_Close_Comment = () => {
-      setOpenComment(false);
-      setCurrentPost('')
-    };
+  const handle_Open_Comment = () => {
+    setCurrentPost(postId);
+    setOpenComment((prev) => !prev);
+  };
+
+
+  const handle_Close_Comment = () => {
+    setOpenComment(false);
+    setCurrentPost("");
+  };
+
 
 
   return (
@@ -38,20 +44,21 @@ export default function Comment({currentPost, setCurrentPost, postId, comments})
       <ClickAwayListener onClickAway={handle_Close_Comment}>
         <div style={{ position: "relative" }}>
           <ChatBubbleOutlineIcon
-            style={{ cursor: "pointer" }}
+            style={{ cursor: "pointer", color: 'blue' }}
             onClick={handle_Open_Comment}
           />
+          {comments?.length ? comments?.length : null}
 
           {openComment && currentPost === postId ? (
             <div style={styles} className="bg-white">
               {/* Post a comment */}
               <div className="">
-                <CommentInput />
+                <CommentInput postId={postId} />
               </div>
 
               {/* All comments */}
               <div className="">
-                <AllComments comments = {comments} />
+                <AllComments comments={comments} />
               </div>
             </div>
           ) : null}

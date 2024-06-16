@@ -1,5 +1,7 @@
 export {default as Bookmarks} from './bookmarks/Bookmarks'
 export {default as Explore} from './explore/Explore'
+export {default as Trending} from './explore/Trending'
+export {default as TrendingPosts} from './explore/TrendingPosts'
 export {default as Home} from './home/Home'
 export {default as LandingPage} from './landing-page/LandingPage'
 export {default as Messages} from './messages/Messages'

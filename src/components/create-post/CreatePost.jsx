@@ -52,11 +52,18 @@ function CreatePost() {
 
 
   return (
-    <div className="">
+    <div
+      // style={{ border: "3px solid red" }}
+      className="border border-gray-400 flex flex-col gap-2 md:gap-5 lg:w-[30rem] p-4 rounded-[6px] shadow-lg"
+    >
       {/* Upper section  */}
-      <div className="flex">
-        <div className="">
-          <AccountCircleIcon />
+      <div
+        // style={{ border: "3px solid purple" }}
+        className="w-[18rem] md:w-[25rem] flex items-center justify-around gap-3"
+      >
+        <div >
+          <AccountCircleIcon style={{fontSize: '3.5rem'}} />
+          {/* <AccountCircleIcon className='icon' /> */}
         </div>
 
         <div className="">
@@ -65,13 +72,16 @@ function CreatePost() {
             onChange={(e) => setPostText(e.target.value)}
             style={{ height: "4rem" }}
             placeholder="What is happening?"
-            className=" border border-black w-[20rem] resize-none cursor-default outline-none p-3"
+            className=" border border-black w-[12rem] sm:w-[20rem] resize-none cursor-default outline-none p-3 rounded-[3px]"
           />
         </div>
       </div>
 
       {/* Lower section */}
-      <div className="flex items-center justify-between">
+      <div
+        // style={{ border: "3px solid green" }}
+        className="w-[16.3rem] sm:w-[23rem] md:w-[24rem] flex items-end justify-between ml-5"
+      >
         {/* Upload photo */}
         <div className="">
           <UploadPostImage
@@ -86,7 +96,7 @@ function CreatePost() {
           <button
             onClick={handle_Create_Post}
             disabled={is_Loading}
-            className={`bg-blue-300 w-[8rem] p-3 rounded-lg ${
+            className={`bg-blue-300 w-[6rem] p-1 sm:p-2 rounded-lg ${
               is_Loading ? " cursor-not-allowed" : " cursor-pointer"
             }`}
           >

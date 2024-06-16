@@ -1,7 +1,9 @@
+import {Posts} from '../../components'
+
 
 function Bookmarks() {
   return (
-    <div>Bookmarks</div>
+    <Posts />
   )
 }
 

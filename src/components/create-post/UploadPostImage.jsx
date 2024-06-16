@@ -11,12 +11,16 @@ function UploadPostImage({postImage, handle_Upload_Image, handle_Remove_Image}) 
     <div className="">
       {/* Show image  */}
       {postImage && (
-        <div className="relative">
+        <div className="relative mb-3">
           <CloseIcon
             onClick={handle_Remove_Image}
             className="absolute top-2 right-2 bg-white rounded-full p-0.5 cursor-pointer"
           />
-          <img src={postImage} alt="" className="h-[15rem] w-[25rem]" />
+          <img
+            src={postImage}
+            alt=""
+            className="h-[15rem] w-[25rem] object-cover"
+          />
         </div>
       )}
 

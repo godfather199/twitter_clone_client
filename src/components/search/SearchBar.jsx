@@ -9,19 +9,20 @@ function SearchBar({searchText, setSearchText, setSearchResults}) {
   }
 
   return (
-    <div className="flex border-2 border-black w-[14rem]">
-      <SearchOutlinedIcon />
+    <div className="flex border border-gray-300 w-[14.4rem] xl:w-[18rem] p-3 rounded-lg bg-gray-100 shadow-lg">
+      <SearchOutlinedIcon style={{ color: "GrayText" }} />
 
       <input
+        // style={{border: '3px solid red'}}
         type="text"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
-        className=""
+        className="outline-none w-[95%] ml-1 text-gray-400 font-bold text-lg bg-gray-100 cursor"
       />
 
       {searchText.length > 0 && (
         <CloseIcon
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer", color: "GrayText" }}
           onClick={handle_Clear_Text}
         />
       )}
