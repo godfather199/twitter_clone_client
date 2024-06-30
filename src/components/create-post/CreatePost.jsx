@@ -16,7 +16,7 @@ function CreatePost() {
   const { postImage, handle_Upload_Image, handle_Remove_Image } =
   useUploadImage();
 
-  const {is_Loading, is_Success } = useSelector(state => state.post)
+  const {is_Loading_Create_Post, is_Success } = useSelector(state => state.post)
 
   const [postText, setPostText] = useState('')
 
@@ -95,12 +95,12 @@ function CreatePost() {
         <div className="">
           <button
             onClick={handle_Create_Post}
-            disabled={is_Loading}
-            className={`bg-blue-300 w-[6rem] p-1 sm:p-2 rounded-lg ${
-              is_Loading ? " cursor-not-allowed" : " cursor-pointer"
+            disabled={is_Loading_Create_Post}
+            className={`bg-blue-400 text-white font-bold w-[6rem] p-1 sm:p-2 rounded-[7px] shadow-lg ${
+              is_Loading_Create_Post ? " cursor-not-allowed" : " cursor-pointer"
             }`}
           >
-            {is_Loading ? <CircularProgress /> : "Post"}
+            {is_Loading_Create_Post ? <CircularProgress /> : "Post"}
           </button>
         </div>
       </div>

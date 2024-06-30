@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { thunk_Fetch_User_By_Id, thunk_Login, thunk_Logout, thunk_Suggested_Account, thunk_Toggle_Bookmark, thunk_Toggle_Follow } from "../thunks/userThunk"
+import { thunk_Fetch_User_By_Id, thunk_Login, thunk_Logout, thunk_Suggested_Account, thunk_Toggle_Bookmark, thunk_Toggle_Follow, thunk_Upload_User_Media } from "../thunks/userThunk"
 import toast from "react-hot-toast"
 
 const initialState = {
     is_Loading: false,
+    media_Is_Loading: false,
     is_Success: false,
+    media_Is_Success: false,
     toggle_Follow_Success: false,
     is_Error: false,
     current_User: null,
@@ -24,12 +26,18 @@ export const userSlice = createSlice({
             state.auth_Modal_State = !state.auth_Modal_State
             state.auth_Modal_Type = payload
         },
+        on_Mount_Auth_Modal: (state) => {
+          state.auth_Modal_State = false
+        },
         reset_Success_State: (state) => {
             state.is_Success = false
             state.is_Error = false
         },
         reset_Toggle_Follow_Success: (state) => {
           state.toggle_Follow_Success = false
+        },
+        reset_Media_Success: (state) => {
+          state.media_Is_Success = false
         },
         set_User_Details: (state, {payload}) => {
             state.user_Details = payload
@@ -87,6 +95,15 @@ export const userSlice = createSlice({
             state.current_User = logged_In_User
             state.toggle_Follow_Success = true
 
+            if (msg.split(" ")[0] === "Followed") {
+              state.user_Details.followers.push(logged_In_User._id)
+            } else {
+              state.user_Details.followers =
+                state.user_Details.followers.filter(
+                  (item) => item !== logged_In_User._id
+                );
+            }
+
             toast.success(msg, {
               duration: 1500,
               position: 'bottom-center'
@@ -107,15 +124,33 @@ export const userSlice = createSlice({
               position: 'bottom-center'
             })
           })
+          .addCase(thunk_Upload_User_Media.pending, (state) => {
+            state.media_Is_Loading = true
+          })
+          .addCase(thunk_Upload_User_Media.fulfilled, (state, {payload}) => {
+            const {msg, logged_In_User} = payload
+
+            state.media_Is_Loading = false
+            state.media_Is_Success = true
+            state.current_User = logged_In_User
+            state.user_Details = logged_In_User
+
+            toast.success(msg, {
+              duration: 1800,
+              position: "bottom-center"
+            })
+          })
     }
 })
 
 
 export const {
   set_Auth_Modal,
+  on_Mount_Auth_Modal,
   reset_Success_State,
   set_User_Details,
   reset_Toggle_Follow_Success,
+  reset_Media_Success
 } = userSlice.actions;
 
 export default userSlice.reducer

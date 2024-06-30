@@ -35,18 +35,23 @@ function SuggestedAccounts() {
   
 
   return (
-    <div className="">
+    <div  className=" w-[19rem] ">
       <div className="">
-        <span className="">Who to follow</span>
+        <span className=" text-2xl font-serif font-bold text-blue-400">Who to follow</span>
       </div>
 
-      <div className="">
+      <div className="p-2">
         {suggested_Accounts?.map((account) => (
-          <SuggestedItem key={account?._id} userInfo = {account} handle_Follow = {handle_Follow} loading_Id = {loading_Id} />
+          <SuggestedItem
+            key={account?._id}
+            userInfo={account}
+            handle_Follow={handle_Follow}
+            loading_Id={loading_Id}
+          />
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 export default SuggestedAccounts

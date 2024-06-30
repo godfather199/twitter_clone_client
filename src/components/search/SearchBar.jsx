@@ -9,7 +9,7 @@ function SearchBar({searchText, setSearchText, setSearchResults}) {
   }
 
   return (
-    <div className="flex border border-gray-300 w-[14.4rem] xl:w-[18rem] p-3 rounded-lg bg-gray-100 shadow-lg">
+    <div className="flex border border-gray-300 w-[14.4rem] xl:w-[16rem] p-3 rounded-lg bg-gray-100 shadow-lg">
       <SearchOutlinedIcon style={{ color: "GrayText" }} />
 
       <input

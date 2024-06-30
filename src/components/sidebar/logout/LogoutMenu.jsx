@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 
 
-export default function LogoutMenu({ openLogoutMenu, handle_Close_Menu, username }) {
+export default function LogoutMenu({ openLogoutMenu, handle_Close_Menu, username, handle_Logout }) {
   
 
   return (
@@ -23,8 +23,18 @@ export default function LogoutMenu({ openLogoutMenu, handle_Close_Menu, username
           vertical: "bottom",
           horizontal: "right",
         }}
+        // sx={{border: 'blue'}}
       >
-        <MenuItem onClick={handle_Close_Menu}>{`Logout @${username}`}</MenuItem>
+        <MenuItem
+          style={{
+            backgroundColor: "white",
+            borderRadius: "5px",
+            border: "blue",
+          }}
+          onClick={handle_Logout}
+        >
+          <span className=" text-blue-400 text-lg font-bold">{`Logout @${username}`}</span>
+        </MenuItem>
       </Menu>
     </div>
   );

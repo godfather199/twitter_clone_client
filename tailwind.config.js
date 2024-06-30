@@ -2,7 +2,14 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      borderWidth: {
+        '3': '2px'
+      },
+      borderColor: {
+        'custom-blue': '#0000ff'
+      }
+    },
   },
   plugins: [],
 };

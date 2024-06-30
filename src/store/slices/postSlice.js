@@ -5,6 +5,7 @@ import { duration } from "@mui/material"
 
 const initialState = {
     is_Loading: false,
+    is_Loading_Create_Post: false,
     is_Success: false,
     is_Repost_Success: false,
     is_Error: false,
@@ -52,12 +53,12 @@ const postSlice = createSlice({
             state.is_Loading = false
           })
           .addCase(thunk_Create_Post.pending, (state) => {
-            state.is_Loading = true
+            state.is_Loading_Create_Post = true
           })
           .addCase(thunk_Create_Post.fulfilled, (state, {payload}) => {
             const {msg, new_Post} = payload
             
-            state.is_Loading = false
+            state.is_Loading_Create_Post = false
             state.post = new_Post
             state.is_Success = true
 
@@ -71,6 +72,7 @@ const postSlice = createSlice({
           })
           .addCase(thunk_Add_Comment.fulfilled, (state, {payload}) => {
             const {msg, post} = payload
+            // console.log('Post slice: ', post)
 
             state.is_Loading = false
             state.posts = state.posts.map((item) => {

@@ -8,8 +8,9 @@ import {
 import { useSelector } from "react-redux";
 
 function ProfileInfo() {
-  const {user_Details, current_User} = useSelector(state => state.user)
+  const {user_Details, current_User, is_Loading} = useSelector(state => state.user)
   // console.log('User details: ', user_Details)
+  // console.log('Current user: ', current_User)
 
 
   return (
@@ -24,7 +25,10 @@ function ProfileInfo() {
 
       {/* Photos */}
       <div className="">
-        <ProfileMedia />
+        <ProfileMedia
+          profile={user_Details?.displayPicture?.url}
+          cover={user_Details?.coverPicture?.url}
+        />
       </div>
 
       {/* User data */}
@@ -39,7 +43,11 @@ function ProfileInfo() {
           {current_User && user_Details?._id === current_User?._id ? (
             <ProfileSettings />
           ) : (
-            <ToggleFollow />
+            <ToggleFollow
+              followingUsersInfo={current_User?.following}
+              currentProfileInfo={user_Details?._id}
+              is_Loading = {is_Loading}
+            />
           )}
         </div>
       </div>

@@ -68,3 +68,27 @@ export const toggle_Bookmark_Service = async (postId) => {
 
     return data
 }
+
+
+
+export const upload_User_Media = async (media_Data) => {
+    const {data} = await axios.post(
+        `/api/user/upload-media`, media_Data
+    )
+
+    return data
+}
+
+
+
+export const user_Authentication_Service = async () => {
+    try {
+        const {data} = await axios.get(
+            `/api/user/authenticate-user`
+        )
+
+        return data
+    } catch (error) {
+        return error.response.data
+    }
+}

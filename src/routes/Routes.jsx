@@ -1,7 +1,7 @@
 import {Explore, Bookmarks, LandingPage, Home, Profile, TrendingPosts} from '../pages'
 import {Sidebar} from '../components'
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
-
+import ProtectedRoute from './ProtectedRoute';
 
 
 function Routes() {
@@ -15,23 +15,43 @@ function Routes() {
         },
         {
           path: "/home",
-          element: <Home />,
+          element: (
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          ),
         },
         {
           path: "/explore",
-          element: <Explore />,
+          element: (
+            <ProtectedRoute>
+              <Explore />
+            </ProtectedRoute>
+          ),
         },
         {
           path: "/explore/trending-posts/:id",
-          element: <TrendingPosts />,
+          element: (
+            <ProtectedRoute>
+              <TrendingPosts />
+            </ProtectedRoute>
+          ),
         },
         {
           path: "/profile/:userId",
-          element: <Profile />,
+          element:(
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          ) 
         },
         {
           path: "/bookmark",
-          element: <Bookmarks />,
+          element:(
+            <ProtectedRoute>
+              <Bookmarks />
+            </ProtectedRoute>
+          ) 
         },
       ],
     },

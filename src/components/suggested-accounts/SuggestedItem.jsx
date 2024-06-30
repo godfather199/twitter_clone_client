@@ -24,28 +24,40 @@ function SuggestedItem({userInfo, handle_Follow, loading_Id}) {
 
   return (
     <div
-      style={{ border: "3px solid red" }}
-      className="flex items-center justify-between w-[20rem] cursor-pointer"
+      // style={{ border: "3px solid red" }}
+      className="border-2 border-blue-400 w-[16rem] h-[4.5rem] flex items-center justify-between cursor-pointer mb-4 p-2 rounded-[6px] shadow-xl"
     >
-      <div className="flex" onClick={handle_Navigate}>
+      <div
+        // style={{ border: "3px solid green" }}
+        className=" w-[10.5rem] flex items-center justify-between"
+        onClick={handle_Navigate}
+      >
         {/* Display photo */}
         <div className="">
-          <AccountCircleIcon style={{ width: "3rem", height: "3rem" }} />
+          <AccountCircleIcon style={{ width: "2.5rem", height: "2.5rem" }} />
         </div>
 
         {/* Name/username */}
-        <div className="flex flex-col">
-          <span className="">{userInfo?.username}</span>
-          <span className="">{`@${userInfo?.username}`}</span>
+        <div
+          // style={{ border: "3px solid red" }}
+          className="flex flex-col w-[7rem]"
+        >
+          <span className="text-md text-blue-400 text-bold">
+            {userInfo?.username}
+          </span>
+          <span className="text-xs text-blue-400 text-semibold">{`@${userInfo?.username}`}</span>
         </div>
       </div>
 
       {/* Follow button */}
       <div className="">
         {is_Loading && loading_Id === userInfo?._id ? (
-          <CircularProgress />
+          <CircularProgress style={{ color: "blue" }} size={20} />
         ) : (
-          <button className="" onClick={() => handle_Follow(userInfo?._id)}>
+          <button
+            className=" bg-blue-400 text-white text-sm font-bold w-[5rem] p-2 rounded-[7px] shadow-xl"
+            onClick={() => handle_Follow(userInfo?._id)}
+          >
             Follow
           </button>
         )}

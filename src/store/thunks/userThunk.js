@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { fetch_User_By_Id_Service, login_Service, logout_Service, suggested_Accounts_Service, toggle_Bookmark_Service, toggle_Follow_Service } from "../../services/userService";
+import { fetch_User_By_Id_Service, login_Service, logout_Service, suggested_Accounts_Service, toggle_Bookmark_Service, toggle_Follow_Service, upload_User_Media } from "../../services/userService";
 
 
 export const thunk_Login = createAsyncThunk(
@@ -67,6 +67,18 @@ export const thunk_Toggle_Bookmark = createAsyncThunk(
   'user/toggle-bookmark', async (postId, thunkAPI) => {
     try {
       return await toggle_Bookmark_Service(postId);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+)
+
+
+
+export const thunk_Upload_User_Media = createAsyncThunk(
+  'user/upload-media', async (media_Data, thunkAPI) => {
+    try {
+      return await upload_User_Media(media_Data)
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);
     }

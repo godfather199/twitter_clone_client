@@ -9,8 +9,8 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
-  height: '25rem',
+  width: 600,
+  height: '35rem',
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
@@ -37,7 +37,7 @@ export default function ProfileSettings() {
     <div>
       <Button onClick={handleOpen}>Set up profile</Button>
       <Modal open={open} onClose={handleClose} >
-        <div style={style} className="bg-white">
+        <div style={style} className="bg-white rounded-[1rem]">
           <MediaSlideModal
             currentSlide={currentSlide}
             setCurrentSlide={setCurrentSlide}
