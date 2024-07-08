@@ -1,26 +1,41 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {TwitterLogo} from '../../'
+import CloseIcon from '@mui/icons-material/Close';
+import { set_Auth_Modal } from "../../../store/slices/userSlice";
+
+
 
 function ModalHeader() {
+  const dispatch = useDispatch()
+
   const {auth_Modal_Type} = useSelector(state => state.user)
   
   return (
-    <div className="">
-      {/* <div className="">
-        <img
-          src="https://img.freepik.com/free-vector/bird-icon_23-2147507196.jpg?t=st=1716088305~exp=1716091905~hmac=16ec2cb9b2c1ba24859ee58ff8a51c9afc228626dea0766e14cfc8b7e8aaa624&w=740"
-          alt=""
-          className="w-[3rem] h-[3rem] rounded-full"
-        />
-      </div> */}
-      <TwitterLogo />
+    <div
+      // style={{ border: "3px solid green" }}
+      className="flex justify-between ml-[10rem] "
+    >
+      <div
+        // style={{ border: "3px solid purple" }}
+        className="flex flex-col items-center gap-3"
+      >
+        <TwitterLogo />
+
+        {/* Header text */}
+        <div className="">
+          <span className=" text-xl font-serif font-bold text-blue-400">
+            {auth_Modal_Type === "Login Modal"
+              ? "Sign in to twitter"
+              : "Sign up to twitter"}
+          </span>
+        </div>
+      </div>
 
       <div className="">
-        <span className="">
-          {auth_Modal_Type === "Login Modal"
-            ? "Sign in to twitter"
-            : "Sign up to twitter"}
-        </span>
+        <CloseIcon
+          onClick={() => dispatch(set_Auth_Modal())}
+          style={{ cursor: "pointer", fontSize: '2rem', }}
+        />
       </div>
     </div>
   );

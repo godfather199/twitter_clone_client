@@ -35,7 +35,7 @@ function ToggleFollow({followingUsersInfo, currentProfileInfo, is_Loading}) {
 
 
   return (
-    <div onClick={handle_Toggle_Follow} className="">
+    <div onClick={handle_Toggle_Follow} className="hidden md:block">
       {isFollowing ? (
         <button
           onMouseEnter={handle_Mouse_Enter}

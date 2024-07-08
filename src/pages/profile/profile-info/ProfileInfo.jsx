@@ -14,7 +14,7 @@ function ProfileInfo() {
 
 
   return (
-    <div className="">
+    <div className="p-5 flex flex-col gap-5">
       {/* Metadata */}
       <div className="">
         <ProfileMetadata
@@ -32,7 +32,7 @@ function ProfileInfo() {
       </div>
 
       {/* User data */}
-      <div className="flex justify-between">
+      <div  className="flex justify-between w-[95%]">
         {/* Additional user info */}
         <div className="">
           <ProfileData profile={user_Details} />

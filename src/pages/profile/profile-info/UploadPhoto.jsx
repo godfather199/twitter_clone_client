@@ -8,20 +8,21 @@ function UploadPhoto({ postImage, handle_Remove_Image, handle_Upload_Image }) {
 
   return (
     <div
-      style={{ border: "3px solid orange" }}
-      className=" bg-white border-4 border-black rounded-full w-[11rem] h-[11rem] flex items-center justify-center relative"
+      // style={{ border: "3px solid orange" }}
+      className=" bg-white  rounded-full w-[11rem] h-[11rem] flex items-center justify-center relative"
     >
       {postImage ? (
         // Display image
-        <div className="relative mb-3">
+        <div className="relative mb-3 shadow-lg">
           <CloseIcon
             onClick={handle_Remove_Image}
             className="absolute top-2 right-2 bg-white rounded-full p-0.5 cursor-pointer"
           />
           <img
+            // style={{border: "3px solid red"}}
             src={postImage}
             alt=""
-            className="h-[13rem] w-[25rem] object-cover"
+            className="h-[13rem] w-[28rem] object-cover"
           />
         </div>
       ) : (

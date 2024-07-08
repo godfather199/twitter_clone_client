@@ -8,11 +8,13 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: 530,
+  height: 622,
   // bgcolor: 'white',
-  border: '2px solid #000',
+  // border: '2px solid #000',
   boxShadow: 24,
-  p: 4,
+  borderRadius: '10px'
+  // p: 4,
 };
 
 export default function AuthModal() {
@@ -29,7 +31,7 @@ export default function AuthModal() {
   return (
     <div>
       <Modal open={auth_Modal_State} onClose={handle_Modal_Close}>
-        <div style={style} className="bg-white">
+        <div style={style} className="bg-white p-5 hidden sm:block">
           {/* Modal body */}
           <ModalContent />
         </div>

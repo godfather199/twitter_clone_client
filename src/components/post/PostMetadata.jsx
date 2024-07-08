@@ -7,7 +7,7 @@ function PostMetadata({postOriginTime}) {
 
   return (
     <div
-      style={{ border: "3px solid purple" }}
+      // style={{ border: "3px solid purple" }}
       className="flex items-center gap-2 ml-[3.6rem]"
     >
       {/* Post time */}

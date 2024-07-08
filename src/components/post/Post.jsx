@@ -23,7 +23,7 @@ function Post({post}) {
   return (
     <div
       // style={{ border: "3px solid black" }}
-      className="border-2 border-blue-400 w-[98%] flex flex-col gap-2 md:gap-4 p-2 md:p-6 rounded-lg shadow-blue-100 shadow-lg"
+      className="border-2 border-blue-400 w-[98%] flex flex-col gap-2 md:gap-3 p-1 md:p-6 rounded-lg shadow-blue-100 shadow-lg"
     >
       {/* Repost status */}
       {repostStatus && pathname.split('/')[1] === 'profile' && (

@@ -21,7 +21,7 @@ function PostUserDetails({postUser, postOriginTime}) {
 
   return (
     <div
-      style={{ border: "3px solid purple" }}
+      // style={{ border: "3px solid purple" }}
       className="flex items-center gap-2 cursor-pointer"
     >
       {/* Post user Image */}
@@ -32,7 +32,7 @@ function PostUserDetails({postUser, postOriginTime}) {
       <div className="flex  items-center gap-2">
         {/* Username / Name */}
         <div
-          style={{ border: "3px solid red" }}
+          // style={{ border: "3px solid red" }}
           className="flex flex-col md:flex-row items-center gap-2"
           onClick={handle_Profile_Navigate}
         >

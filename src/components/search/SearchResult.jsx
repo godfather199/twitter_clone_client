@@ -1,25 +1,29 @@
 import PersonIcon from '@mui/icons-material/Person';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { set_User_Details } from '../../store/slices/userSlice';
 import { useState } from 'react';
+import useItemHover from '../../hooks/useItemHover';
 
 
 function SearchResult({searchResults}) {
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const {pathname} = useLocation()
 
-  const [currentResultId, setCurrentResultId] = useState()
-
-
-  const handle_Mouse_Enter = (userId) => {
-    setCurrentResultId(userId)
-  }
+  const { currentHoverItemId, handle_Mouse_Enter, handle_Mouse_Leave } = useItemHover() 
+  
+  // const [currentResultId, setCurrentResultId] = useState()
 
 
-  const handle_Mouse_Leave = () => {
-    setCurrentResultId()
-  }
+  // const handle_Mouse_Enter = (userId) => {
+  //   setCurrentResultId(userId)
+  // }
+
+
+  // const handle_Mouse_Leave = () => {
+  //   setCurrentResultId()
+  // }
 
 
   const handle_User_Navigation = (postUser) => {
@@ -28,13 +32,17 @@ function SearchResult({searchResults}) {
   }
 
   return (
-    <div className="absolute top-2 border-2 border-blue-200 z-50 bg-white w-[14.4rem] xl:w-[18rem] flex flex-col items-center justify-center rounded-lg shadow-lg p-1 ">
+    <div
+      className={`absolute top-2 border-2 border-blue-200 z-50 bg-white  ${
+        pathname === "/explore" ? "w-[90%] md:w-[80%] xl:w-[25rem]" : "w-[14.4rem] xl:w-[17rem]"
+      } flex flex-col items-center justify-center rounded-lg shadow-lg p-1`}
+    >
       {searchResults?.map((user) => (
         <div
           // style={{ border: "3px solid green" }}
           key={user?._id}
           className={`${
-            user?._id === currentResultId ? "bg-blue-100" : null
+            user?._id === currentHoverItemId ? "bg-blue-100" : null
           } flex items-center justify-around  my-3 cursor-pointer w-[90%] border-2 border-blue-300 p-1 rounded-lg`}
           onClick={() => handle_User_Navigation(user)}
           onMouseEnter={() => handle_Mouse_Enter(user?._id)}

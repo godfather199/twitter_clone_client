@@ -1,5 +1,18 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { fetch_User_By_Id_Service, login_Service, logout_Service, suggested_Accounts_Service, toggle_Bookmark_Service, toggle_Follow_Service, upload_User_Media } from "../../services/userService";
+import { fetch_User_By_Id_Service, login_Service, logout_Service, register_Service, suggested_Accounts_Service, toggle_Bookmark_Service, toggle_Follow_Service, upload_User_Media } from "../../services/userService";
+
+
+export const thunk_Register = createAsyncThunk(
+  "user/register",
+  async (user_Data, thunkAPI) => {
+    try {
+      return await register_Service(user_Data);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);
+
 
 
 export const thunk_Login = createAsyncThunk(

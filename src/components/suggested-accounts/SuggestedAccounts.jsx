@@ -35,7 +35,7 @@ function SuggestedAccounts() {
   
 
   return (
-    <div  className=" w-[19rem] ">
+    <div style={{border: '3px solid purple'}}  className=" w-[19rem] ">
       <div className="">
         <span className=" text-2xl font-serif font-bold text-blue-400">Who to follow</span>
       </div>

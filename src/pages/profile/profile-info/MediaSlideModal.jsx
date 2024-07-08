@@ -109,12 +109,12 @@ function MediaSlideModal({ currentSlide, setCurrentSlide, handleModalClose }) {
   
   return (
     <div
-      style={{ border: "3px solid orange" }}
+      // style={{ border: "3px solid orange" }}
       className="h-full flex flex-col "
     >
       {/*Logo*/}
       <div
-        style={{ border: "3px solid red" }}
+        // style={{ border: "3px solid red" }}
         className={` ${
           currentSlide === 0
             ? "w-[93%] justify-center"
@@ -122,7 +122,7 @@ function MediaSlideModal({ currentSlide, setCurrentSlide, handleModalClose }) {
         }  flex items-center  `}
       >
         <div
-          style={{ border: "3px solid purple" }}
+          // style={{ border: "3px solid purple" }}
           className={`w-[95%] flex items-center ${
             currentSlide === 0 ? "justify-center" : " justify-between"
           } ml-[1rem]`}
@@ -139,8 +139,8 @@ function MediaSlideModal({ currentSlide, setCurrentSlide, handleModalClose }) {
 
       {/* Header */}
       <div
-        style={{ border: "3px solid green" }}
-        className=" w-[30rem] h-[5rem] flex flex-col items-center my-[1rem]"
+        // style={{ border: "3px solid green" }}
+        className=" w-[30rem] h-[5rem] flex flex-col items-center my-[1rem] ml-7"
       >
         <span className=" text-2xl text-gray-600 font-sans font-bold">
           {slide_Array[currentSlide].header.h1}
@@ -152,7 +152,7 @@ function MediaSlideModal({ currentSlide, setCurrentSlide, handleModalClose }) {
 
       {/* Media */}
       <div
-        style={{ border: "3px solid green" }}
+        // style={{ border: "3px solid green" }}
         className="h-[15rem] flex items-center justify-center"
       >
         {currentSlide === 0 && (
@@ -178,9 +178,9 @@ function MediaSlideModal({ currentSlide, setCurrentSlide, handleModalClose }) {
       <div className="flex items-center justify-center ">
         {currentSlide === 0 ? (
           <button
-            className={`w-[20rem] p-3 bg-gray-300 text-white rounded-lg text-lg font-semibold ${
+            className={`w-[19rem] p-4 bg-blue-400 text-white rounded-[8px] text-xl font-bold ${
               currentSlide == 0 ? "mt-[1.5rem]" : "mt-[10rem] "
-            } mb-4`}
+            } mb-4 shadow-lg hover:opacity-90`}
             onClick={handle_Increment_Slide}
           >
             Skip for now
@@ -190,13 +190,13 @@ function MediaSlideModal({ currentSlide, setCurrentSlide, handleModalClose }) {
             disabled={media_Is_Loading}
             className={`${
               media_Is_Loading ? " cursor-not-allowed" : " cursor-pointer"
-            } w-[20rem] p-3 bg-gray-300 text-white rounded-lg text-lg font-semibold ${
+            } w-[18rem] p-4 bg-blue-400 text-white rounded-[8px] text-2xl font-bold ${
               currentSlide == 0 ? "mt-[1.5rem]" : "mt-[10rem] "
-            } mb-4`}
+            } mb-4 shadow-lg hover:opacity-90`}
             onClick={handle_Save_Media}
           >
             {media_Is_Loading ? (
-              <CircularProgress style={{ color: "white" }} size={20}  />
+              <CircularProgress style={{ color: "white" }} size={20} />
             ) : (
               "Save"
             )}

@@ -7,15 +7,20 @@ import CloseIcon from '@mui/icons-material/Close';
 
 
 
-function UploadCoverPhoto({postImage, coverImage, handle_Remove_Cover_Image, handle_Upload_Cover_Image}) {
-  const {current_User} = useSelector(state => state.user)
+function UploadCoverPhoto({
+  postImage,
+  coverImage,
+  handle_Remove_Cover_Image,
+  handle_Upload_Cover_Image,
+}) {
+  const { current_User } = useSelector((state) => state.user);
 
   return (
     <div
-      style={{ border: "5px solid purple" }}
+      // style={{ border: "5px solid purple" }}
       className="w-full h-[21rem] mt-[10rem]"
     >
-      <div style={{ border: "3px solid red" }} className="relative mb-[5rem]">
+      <div  className="relative mb-[5rem]">
         {/* Cover photo */}
         {coverImage ? (
           //  Display Cover photo

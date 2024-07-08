@@ -7,6 +7,7 @@ import toast from 'react-hot-toast';
 import { thunk_Create_Post } from '../../store/thunks/postThunk';
 import { useDispatch, useSelector } from 'react-redux';
 import { add_Created_Post, reset_Post_Success } from '../../store/slices/postSlice';
+import { Link } from 'react-router-dom';
 
 
 
@@ -17,6 +18,7 @@ function CreatePost() {
   useUploadImage();
 
   const {is_Loading_Create_Post, is_Success } = useSelector(state => state.post)
+  const {current_User} = useSelector(state => state.user)
 
   const [postText, setPostText] = useState('')
 
@@ -61,10 +63,11 @@ function CreatePost() {
         // style={{ border: "3px solid purple" }}
         className="w-[18rem] md:w-[25rem] flex items-center justify-around gap-3"
       >
-        <div >
-          <AccountCircleIcon style={{fontSize: '3.5rem'}} />
-          {/* <AccountCircleIcon className='icon' /> */}
-        </div>
+        <Link to={`/profile/${current_User?._id}`}>
+          <AccountCircleIcon
+            style={{ fontSize: "3.5rem", cursor: "pointer" }}
+          />
+        </Link>
 
         <div className="">
           <textarea

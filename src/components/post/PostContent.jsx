@@ -3,7 +3,7 @@
 function PostContent({text, pic}) {
   return (
     <div
-      style={{ border: "3px solid green" }}
+      // style={{ border: "3px solid green" }}
       className="flex flex-col gap-3 ml-[3.6rem]"
     >
       {/* Post text */}

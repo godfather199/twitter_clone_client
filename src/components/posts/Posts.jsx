@@ -1,8 +1,13 @@
 import {Post, LoadingPageSpinner} from '../'
 import {  useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import {  reset_Post_Success } from "../../store/slices/postSlice"
-import { thunk_Bookmark_Posts, thunk_Timeline_Post, thunk_Trending_Hashtag_Posts, thunk_User_Posts } from "../../store/thunks/postThunk"
+import { reset_Post_Success } from "../../store/slices/postSlice";
+import {
+  thunk_Bookmark_Posts,
+  thunk_Timeline_Post,
+  thunk_Trending_Hashtag_Posts,
+  thunk_User_Posts,
+} from "../../store/thunks/postThunk";
 import { useLocation } from 'react-router-dom'
 
 
@@ -84,8 +89,8 @@ function Posts() {
         <LoadingPageSpinner open={open}  />
       ) : (
         <div
-          style={{ border: "3px solid red" }}
-          className="flex flex-col items-center gap-[3rem]"
+          style={{ border: "4px solid purple" }}
+          className="flex flex-col items-center gap-[3rem] max-w-[45rem]"
         >
           {posts.map((item) => (
             <Post key={item?._id} post={item} />

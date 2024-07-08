@@ -1,6 +1,15 @@
 import axios from "axios"
 
 
+export const register_Service = async (user_Data) => {
+    const {data} = await axios.post(
+        `/api/user/register`, user_Data
+    )
+
+    return data
+}
+
+
 export const login_Service = async (user_Data) => {
     const {data} = await axios.post(
         `/api/user/login`, user_Data
