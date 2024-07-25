@@ -1,4 +1,4 @@
-import {Post, LoadingPageSpinner} from '../'
+import {Post, LoadingPageSpinner, NoPostsFound} from '../'
 import {  useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { reset_Post_Success } from "../../store/slices/postSlice";
@@ -18,6 +18,7 @@ function Posts() {
 
   const { is_Loading, posts } = useSelector((state) => state.post);
   const { current_User } = useSelector((state) => state.user);
+  // console.log('Profile posts: ', posts)
 
   const [open, setOpen] = useState(false);
 
@@ -48,9 +49,7 @@ function Posts() {
     else {
       dispatch(thunk_Timeline_Post())
     }
-  }, [current_User])
-
-
+  }, [current_User, pathname.split('/')[2]])
 
 
 
@@ -86,15 +85,21 @@ function Posts() {
   return (
     <div className="">
       {is_Loading ? (
-        <LoadingPageSpinner open={open}  />
+        <LoadingPageSpinner open={open} />
       ) : (
         <div
-          style={{ border: "4px solid purple" }}
-          className="flex flex-col items-center gap-[3rem] max-w-[45rem]"
+          // style={{ border: "4px solid purple" }}
+          className="flex flex-col items-center gap-[3rem]  max-w-[45rem]"
         >
-          {posts.map((item) => (
-            <Post key={item?._id} post={item} />
-          ))}
+          {posts?.length === 0 ? (
+            <NoPostsFound title = 'Posts' />
+          ) : (
+            <>
+              {posts.map((item) => (
+                <Post key={item?._id} post={item} />
+              ))}
+            </>
+          )}
         </div>
       )}
     </div>

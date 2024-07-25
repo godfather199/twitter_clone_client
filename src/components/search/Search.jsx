@@ -26,6 +26,13 @@ function Search() {
   }, [searchText]) 
 
 
+
+  const handle_Clear_Text = () => {
+    setSearchText("")
+    setSearchResults([])
+  }
+
+
   return (
     <div className="">
       {/* Search user by name/username */}
@@ -33,14 +40,17 @@ function Search() {
         <SearchBar
           searchText={searchText}
           setSearchText={setSearchText}
-          setSearchResults={setSearchResults}
+          handle_Clear_Text={handle_Clear_Text}
         />
       </div>
 
       {/* Display results */}
       {searchResults.length > 0 && (
         <div className="relative">
-          <SearchResult searchResults={searchResults} />
+          <SearchResult
+            searchResults={searchResults}
+            handle_Clear_Text = {handle_Clear_Text}
+          />
         </div>
       )}
     </div>

@@ -1,6 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { thunk_Fetch_User_By_Id, thunk_Login, thunk_Logout, thunk_Register, thunk_Suggested_Account, thunk_Toggle_Bookmark, thunk_Toggle_Follow, thunk_Upload_User_Media } from "../thunks/userThunk"
-import toast from "react-hot-toast"
+import {
+  thunk_Fetch_User_By_Id,
+  thunk_Login,
+  thunk_Logout,
+  thunk_Register,
+  thunk_Suggested_Account,
+  thunk_Toggle_Bookmark,
+  thunk_Toggle_Follow,
+  thunk_Upload_User_Media,
+} from "../thunks/userThunk";
+import toast from "react-hot-toast";
 
 const initialState = {
     is_Loading: false,

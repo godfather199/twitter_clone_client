@@ -1,13 +1,20 @@
+import { useSelector } from 'react-redux'
 import {ProfileInfo} from '../'
 import {Search, SuggestedAccounts, Posts} from '../../components'
 
 
 
 function Profile() {
+
+
   return (
-    <div style={{border: '3px solid purple'}} className=" flex ">
+    <div style={{ border: "3px solid purple" }} className=" flex ">
       {/* Middle section */}
-      <div style={{border: '4px solid green'}} className="w-full lg:w-[80%] xl:w-[70%]">
+      <div
+        style={{ border: "4px solid green" }}
+        className="w-[95%] flex flex-col gap-[3rem] p-4"
+      >
+        {/* <div style={{border: '4px solid green'}} className="w-full lg:w-[80%] xl:w-[70%]"> */}
         {/* Profile information */}
         <div className="mb-5">
           <ProfileInfo />
@@ -36,7 +43,7 @@ function Profile() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Profile

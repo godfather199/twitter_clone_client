@@ -15,8 +15,8 @@ function PostButtons({
 }) {
   return (
     <div
-      // style={{ border: "3px solid red" }}
-      className=" w-[80%] flex items-center justify-between ml-[3.6rem]"
+      style={{ border: "3px solid red" }}
+      className=" w-[77%] md:w-[80%] flex items-center justify-between ml-[3.6rem]"
     >
       {/* Comment */}
       <div className="">

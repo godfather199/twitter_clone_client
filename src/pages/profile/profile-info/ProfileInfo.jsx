@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   ProfileSettings,
   ToggleFollow,
@@ -5,12 +6,28 @@ import {
   ProfileMedia,
   ProfileMetadata,
 } from "../../";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { set_User_Details } from "../../../store/slices/userSlice";
+import { useLocation } from "react-router-dom";
 
 function ProfileInfo() {
-  const {user_Details, current_User, is_Loading} = useSelector(state => state.user)
+  const dispatch = useDispatch()
+  const {state} = useLocation()
+
+
+  const { user_Details, current_User, is_Loading } = useSelector(
+    (state) => state.user
+  );
   // console.log('User details: ', user_Details)
   // console.log('Current user: ', current_User)
+
+  // Navigating from 'CreatePost' pic
+  useEffect(() => {
+    if (state === 'create-post') {
+      dispatch(set_User_Details(current_User));
+    }
+
+  }, [state]);
 
 
   return (

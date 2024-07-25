@@ -1,0 +1,11 @@
+**Frontend
+   1- Typescript
+   2- Zod
+   3- Radix-ui
+   4- react-query
+
+
+**Backend
+    1- Typescript
+    2- express-validator
+    3- winston

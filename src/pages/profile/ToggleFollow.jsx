@@ -14,7 +14,7 @@ function ToggleFollow({followingUsersInfo, currentProfileInfo, is_Loading}) {
   // Check if logged-in user is "following" this profile
   useEffect(() => {
     setIsFollowing(
-      followingUsersInfo.find((item) => item === currentProfileInfo)
+      followingUsersInfo?.find((item) => item === currentProfileInfo)
     );
   }, [followingUsersInfo]);
 

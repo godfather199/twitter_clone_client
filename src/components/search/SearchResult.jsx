@@ -6,12 +6,13 @@ import { useState } from 'react';
 import useItemHover from '../../hooks/useItemHover';
 
 
-function SearchResult({searchResults}) {
+function SearchResult({searchResults, handle_Clear_Text}) {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const {pathname} = useLocation()
 
-  const { currentHoverItemId, handle_Mouse_Enter, handle_Mouse_Leave } = useItemHover() 
+  const { currentHoverItemId, handle_Mouse_Enter, handle_Mouse_Leave } =
+    useItemHover(); 
   
   // const [currentResultId, setCurrentResultId] = useState()
 
@@ -28,6 +29,7 @@ function SearchResult({searchResults}) {
 
   const handle_User_Navigation = (postUser) => {
     dispatch(set_User_Details(postUser))
+    handle_Clear_Text()
     navigate(`/profile/${postUser?._id}`)
   }
 

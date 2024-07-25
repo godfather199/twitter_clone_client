@@ -46,6 +46,7 @@ function ModalForm({register, handleSubmit, formState: {errors}, reset}) {
 
 
   const login_Submit = ({info, password}) => {
+    // dispatch(thunk_Login({ userInfo: 'batman@gmail.com', userPassword: batman }));
     dispatch(thunk_Login({ userInfo: info, userPassword: password }));
 
     reset()

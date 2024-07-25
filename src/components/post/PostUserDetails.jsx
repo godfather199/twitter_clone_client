@@ -1,3 +1,4 @@
+import {DisplayProfilePicture} from '../'
 import { useNavigate } from 'react-router-dom';
 import useTimeAgo from '../../hooks/useTimeAgo'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -26,7 +27,11 @@ function PostUserDetails({postUser, postOriginTime}) {
     >
       {/* Post user Image */}
       <div className="" onClick={handle_Profile_Navigate}>
-        <AccountCircleIcon style={{ fontSize: "3rem" }} />
+        <DisplayProfilePicture
+          imgData={postUser?.displayPicture?.url}
+          imgStyle={"w-[3rem] h-[3rem]"}
+          accountStyle={3}
+        />
       </div>
 
       <div className="flex  items-center gap-2">
@@ -44,7 +49,9 @@ function PostUserDetails({postUser, postOriginTime}) {
 
         {/* Posted intervals of hours */}
         <div className="">
-          <span className="text-xs text-gray-500 font-semibold hidden sm:block">{timeAgo}</span>
+          <span className="text-xs text-gray-500 font-semibold hidden lg:block">
+            {timeAgo}
+          </span>
         </div>
       </div>
     </div>

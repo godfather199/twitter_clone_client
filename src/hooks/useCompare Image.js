@@ -23,9 +23,10 @@ function useCompareImage(url) {
   };
 
   useEffect(() => {
-    imageUrlToBase64(url)
-    .then(data => setImageData(data))
-  }, [])
+    if (url) {
+      imageUrlToBase64(url).then((data) => setImageData(data));
+    }
+  }, []);
 
 
   return {

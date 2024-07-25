@@ -21,7 +21,7 @@ function PostContent({text, pic}) {
           <img
             src={pic}
             alt=""
-            className=" w-[100%] h-[11rem] md:w-[95%] md:h-[20rem] object-cover rounded-lg shadow-gray-200 shadow-lg"
+            className=" w-[100%] h-[8rem] md:w-[97%] md:h-[15rem] object-cover rounded-lg shadow-gray-200 shadow-lg"
           />
         </div>
       )}

@@ -12,13 +12,11 @@ function Home() {
     >
       {/* Home feed */}
       <div
-        style={{ border: "5px solid green" }}
+        style={{ border: "5px solid black" }}
         className="w-[95%] flex flex-col gap-[3rem] p-4"
       >
         {/* Create post */}
-        <div  className="">
           <CreatePost />
-        </div>
 
         {/* Timeline posts */}
         <div className="">

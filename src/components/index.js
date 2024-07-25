@@ -33,4 +33,5 @@ export {default as SuggestedAccounts} from './suggested-accounts/SuggestedAccoun
 export {default as SuggestedItem} from './suggested-accounts/SuggestedItem'
 export {default as LoadingPageSpinner} from './layout/LoadingPageSpinner'
 export {default as DisplayProfilePicture} from './layout/DisplayProfilePicture'
+export {default as NoPostsFound} from './layout/NoPostsFound'
 // export {default as } from '.'

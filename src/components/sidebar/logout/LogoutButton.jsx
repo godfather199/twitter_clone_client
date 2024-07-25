@@ -53,7 +53,7 @@ function LogoutButton() {
   
     setTimeout(() => {
       navigate('/')
-    }, 3000);
+    }, 2100);
 
     handle_Close_Menu()
   }
@@ -66,7 +66,7 @@ function LogoutButton() {
     >
       {/* Profile Pic */}
       <div
-      // style={{border: '3px solid red'}}
+        // style={{border: '3px solid red'}}
         className="flex items-center justify-center cursor-pointer"
         // className="flex items-center justify-center cursor-pointer min-w-[3rem] min-h-[3rem]"
         onClick={!isHidden ? handle_Open_Menu : null}
@@ -86,7 +86,10 @@ function LogoutButton() {
       {isHidden && (
         <>
           {/* User metadata */}
-          <div className="  flex flex-col">
+          <div
+            style={{ border: "3px solid green" }}
+            className="  flex flex-col min-w-[6rem]"
+          >
             <span className=" text-xs  text-blue-400 font-bold">
               {current_User?.name}
             </span>
@@ -94,7 +97,7 @@ function LogoutButton() {
           </div>
         </>
       )}
-      
+
       {/* Logout menu */}
       <div className="">
         {isHidden && (

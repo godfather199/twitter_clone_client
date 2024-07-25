@@ -1,3 +1,4 @@
+import {DisplayProfilePicture} from '../'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -34,7 +35,11 @@ function SuggestedItem({userInfo, handle_Follow, loading_Id}) {
       >
         {/* Display photo */}
         <div className="">
-          <AccountCircleIcon style={{ width: "2.5rem", height: "2.5rem" }} />
+          <DisplayProfilePicture
+            imgData={userInfo?.displayPicture?.url}
+            imgStyle={'w-[2.5rem] h-[2.5rem]'}
+            accountStyle={2.5}
+          />
         </div>
 
         {/* Name/username */}

@@ -3,14 +3,9 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useLocation } from 'react-router-dom';
 
 
-function SearchBar({searchText, setSearchText, setSearchResults}) {
+function SearchBar({searchText, setSearchText, handle_Clear_Text}) {
   const {pathname} = useLocation()
 
-
-  const handle_Clear_Text = () => {
-    setSearchText("")
-    setSearchResults([])
-  }
 
   return (
     <div
