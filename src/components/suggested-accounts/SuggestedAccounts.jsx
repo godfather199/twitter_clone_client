@@ -5,12 +5,6 @@ import { thunk_Suggested_Account, thunk_Toggle_Follow } from "../../store/thunks
 import { reset_Toggle_Follow_Success } from '../../store/slices/userSlice'
 
 
-// Notes
-// 1- The followers and following of currentuser should be updated
-// 2- New suggested account list should be fetched
-// 3- Timeline should show posts of followed users
-// 4- currentuser should be refetched from the server
-
 
 
 function SuggestedAccounts() {
@@ -35,9 +29,11 @@ function SuggestedAccounts() {
   
 
   return (
-    <div style={{border: '3px solid purple'}}  className=" w-[19rem] ">
+    <div  className=" w-[19rem] ">
       <div className="">
-        <span className=" text-2xl font-serif font-bold text-blue-400">Who to follow</span>
+        <span className=" text-2xl font-serif font-bold text-blue-400">
+          Who to follow
+        </span>
       </div>
 
       <div className="p-2">

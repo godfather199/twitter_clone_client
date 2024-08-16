@@ -1,0 +1,33 @@
+{
+  "_id": { "$oid": "664ff60b7f5134873f0b63b1" },
+  "name": "Venom Singh",
+  "username": "venom100",
+  "email": "venom@gmail.com",
+  "password": "$2b$10$lgWCV2lHNQLi/AVmMRV7g.1qvtyKQCupnIl2ZOQMI/RCU7etkEiV6",
+  "posts": [
+    { "$oid": "664ff7040947475edea04269" },
+    { "$oid": "664ff7420947475edea0426d" },
+    { "$oid": "666d5cc29e9c77fab988010b" }
+  ],
+  "bookmarks": [{ "$oid": "664d6423b022c9f4a0d0ac01" }],
+  "reposted": [
+    { "$oid": "664d63e2b022c9f4a0d0abfd" },
+    { "$oid": "664d6423b022c9f4a0d0ac01" }
+  ],
+  "followers": [
+    { "$oid": "6656dc293081d6383e574ff2" },
+    { "$oid": "664c4fc612bd7e3653ad0b10" }
+  ],
+  "following": [{ "$oid": "664d639fa18a0595e0a0f9d6" }],
+  "createdAt": { "$date": { "$numberLong": "1716516363859" } },
+  "updatedAt": { "$date": { "$numberLong": "1720494477532" } },
+  "__v": { "$numberInt": "11" },
+  "coverPicture": {
+    "public_Id": "Twitter/Twitter_User_Cover_Picture/lpyzjwyy9gdmoa96o2pm",
+    "url": "https://res.cloudinary.com/dbhxlg7wx/image/upload/v1720491736/Twitter/Twitter_User_Cover_Picture/lpyzjwyy9gdmoa96o2pm.webp"
+  },
+  "displayPicture": {
+    "public_Id": "Twitter/Twitter_User_Display_Picture/nff3zreng9mjob3pglpq",
+    "url": "https://res.cloudinary.com/dbhxlg7wx/image/upload/v1720491735/Twitter/Twitter_User_Display_Picture/nff3zreng9mjob3pglpq.jpg"
+  }
+}

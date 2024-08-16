@@ -3,7 +3,10 @@ import PersonIcon from '@mui/icons-material/Person';
 
 function ProfileMedia({profile, cover}) {
   return (
-    <div style={{ border: "3px solid red" }} className="relative mb-[3rem] w-[100%] lg:w-[95%]">
+    <div
+      // style={{ border: "3px solid red" }}
+      className="relative mb-[3rem] w-[100%] lg:w-[95%]"
+    >
       {/* Cover photo */}
       <div className="">
         {cover ? (

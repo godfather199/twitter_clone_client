@@ -12,7 +12,7 @@ function PostUserDetails({postUser, postOriginTime}) {
   const navigate = useNavigate()
 
   const {timeAgo} = useTimeAgo(postOriginTime)
-
+// console.log('Profile user_Details: ', postUser)
 
   const handle_Profile_Navigate = () => {
     dispatch(set_User_Details(postUser))

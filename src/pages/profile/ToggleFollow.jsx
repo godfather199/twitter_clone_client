@@ -3,36 +3,34 @@ import { thunk_Toggle_Follow } from "../../store/thunks/userThunk";
 import { useDispatch } from "react-redux";
 import { CircularProgress } from "@mui/material";
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
+import { useLocation } from "react-router-dom";
 
 
-function ToggleFollow({followingUsersInfo, currentProfileInfo, is_Loading}) {
-  const dispatch = useDispatch()
-  const [isFollowing, setIsFollowing] = useState(false)
-  const [buttonText, setButtonText] = useState('FOLLOWING')
-
+function ToggleFollow({ followingUsersInfo, currentProfileInfo, is_Loading }) {
+  const dispatch = useDispatch();
+  const {pathname} = useLocation()
+  
+  const [isFollowing, setIsFollowing] = useState(false);
+  const [buttonText, setButtonText] = useState("FOLLOWING");
 
   // Check if logged-in user is "following" this profile
   useEffect(() => {
     setIsFollowing(
       followingUsersInfo?.find((item) => item === currentProfileInfo)
     );
-  }, [followingUsersInfo]);
-
+  }, [followingUsersInfo, currentProfileInfo]);
 
   const handle_Mouse_Enter = () => {
-    setButtonText("UNFOLLOW")
-  }
-
+    setButtonText("UNFOLLOW");
+  };
 
   const handle_Mouse_Leave = () => {
-    setButtonText("FOLLOWING")
-  }
-
+    setButtonText("FOLLOWING");
+  };
 
   const handle_Toggle_Follow = () => {
-    dispatch(thunk_Toggle_Follow(currentProfileInfo))
-  }
-
+    dispatch(thunk_Toggle_Follow(currentProfileInfo));
+  };
 
   return (
     <div onClick={handle_Toggle_Follow} className="hidden md:block">

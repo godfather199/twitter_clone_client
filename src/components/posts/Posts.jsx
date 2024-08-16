@@ -95,7 +95,7 @@ function Posts() {
             <NoPostsFound title = 'Posts' />
           ) : (
             <>
-              {posts.map((item) => (
+              {posts?.map((item) => (
                 <Post key={item?._id} post={item} />
               ))}
             </>

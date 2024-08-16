@@ -4,14 +4,17 @@ import {Trending} from '../'
 
 function Explore() {
   return (
-    <div style={{ border: "3px solid purple" }} className="flex h-full relative">
+    <div
+      // style={{ border: "3px solid purple" }}
+      className="flex h-full relative"
+    >
       {/* Middle Section */}
       <div
-        style={{ border: "3px solid green" }}
+        // style={{ border: "3px solid green" }}
         className="w-[100%] lg:w-[71%] flex flex-col items-center gap-10 "
       >
         {/* Search */}
-        <div  className="w-[80%]">
+        <div className="w-[80%]">
           <Search />
         </div>
 

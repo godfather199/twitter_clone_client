@@ -87,7 +87,7 @@ function LogoutButton() {
         <>
           {/* User metadata */}
           <div
-            style={{ border: "3px solid green" }}
+            // style={{ border: "3px solid green" }}
             className="  flex flex-col min-w-[6rem]"
           >
             <span className=" text-xs  text-blue-400 font-bold">

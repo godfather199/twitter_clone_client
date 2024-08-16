@@ -1,17 +1,13 @@
-import { useSelector } from 'react-redux'
-import {ProfileInfo} from '../'
-import {Search, SuggestedAccounts, Posts} from '../../components'
-
-
+import { useSelector } from "react-redux";
+import { ProfileInfo } from "../";
+import { Search, SuggestedAccounts, Posts } from "../../components";
 
 function Profile() {
-
-
   return (
-    <div style={{ border: "3px solid purple" }} className=" flex ">
+    <div  className=" flex ">
       {/* Middle section */}
       <div
-        style={{ border: "4px solid green" }}
+        // style={{ border: "4px solid green" }}
         className="w-[95%] flex flex-col gap-[3rem] p-4"
       >
         {/* <div style={{border: '4px solid green'}} className="w-full lg:w-[80%] xl:w-[70%]"> */}
@@ -28,7 +24,7 @@ function Profile() {
 
       {/* Right section */}
       <div
-        style={{ border: "4px solid black" }}
+        // style={{ border: "4px solid black" }}
         // className="w-[20rem] h-[18rem] hidden lg:block p-3 "
         className="w-[14.4rem] xl:w-[18rem] h-[18rem] hidden xl:block p-2 sticky top-[1rem] self-start"
       >
@@ -46,4 +42,4 @@ function Profile() {
   );
 }
 
-export default Profile
+export default Profile;

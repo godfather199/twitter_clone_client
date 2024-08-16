@@ -3,9 +3,15 @@ import {Posts, SuggestedAccounts} from '../../components'
 
 function Bookmarks() {
   return (
-    <div style={{border: '5px solid green'}} className="flex relative w-[100%]">
+    <div
+      // style={{ border: "5px solid green" }}
+      className="flex relative w-[100%]"
+    >
       {/* Bookmarked Posts */}
-      <div style={{border: '5px solid orange'}} className="w-[23rem] sm:w-[30rem] md:w-[90%] lg:w-[100%] xl:w-[100%]">
+      <div
+        // style={{ border: "5px solid orange" }}
+        className="w-[23rem] sm:w-[30rem] md:w-[90%] lg:w-[100%] xl:w-[100%]"
+      >
         <Posts />
       </div>
 

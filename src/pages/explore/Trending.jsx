@@ -63,14 +63,18 @@ function Trending() {
             >
               <span
                 className={`text-xl ${
-                  currentHoverItemId === item?._id ? " text-white" : "text-blue-400"
+                  currentHoverItemId === item?._id
+                    ? " text-white"
+                    : "text-blue-400"
                 }  font-sans font-semibold`}
               >
                 {item?.hashWord?.split("#")[1]}
               </span>
               <span
                 className={`text-lg ${
-                  currentHoverItemId === item?._id ? " text-white" : "text-gray-500"
+                  currentHoverItemId === item?._id
+                    ? " text-white"
+                    : "text-gray-500"
                 }  font-serif font-semibold`}
               >{`${item?.postsCount} posts`}</span>
             </div>

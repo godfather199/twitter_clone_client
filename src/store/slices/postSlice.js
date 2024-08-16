@@ -1,7 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit"
-import { thunk_Add_Comment, thunk_Bookmark_Posts, thunk_Create_Post, thunk_Timeline_Post, thunk_Toggle_Like, thunk_Toggle_Repost, thunk_Trending_Hashtag_Posts, thunk_User_Posts } from "../thunks/postThunk"
-import toast from "react-hot-toast"
-import { duration } from "@mui/material"
+import { createSlice } from "@reduxjs/toolkit";
+import {
+  thunk_Add_Comment,
+  thunk_Bookmark_Posts,
+  thunk_Create_Post,
+  thunk_Timeline_Post,
+  thunk_Toggle_Like,
+  thunk_Toggle_Repost,
+  thunk_Trending_Hashtag_Posts,
+  thunk_User_Posts,
+} from "../thunks/postThunk";
+import toast from "react-hot-toast";
+import { duration } from "@mui/material";
 
 const initialState = {
     is_Loading: false,

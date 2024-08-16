@@ -9,7 +9,7 @@ function SearchBar({searchText, setSearchText, handle_Clear_Text}) {
 
   return (
     <div
-      style={{ border: "3px solid purple" }}
+      // style={{ border: "3px solid purple" }}
       className={`flex border border-gray-300  ${
         pathname === "/explore"
           ? "w-[95%] md:w-[85%] xl:w-[30rem]"
