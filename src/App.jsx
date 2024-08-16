@@ -3,7 +3,8 @@ import Routes from "./routes/Routes"
 import { Toaster } from "react-hot-toast"
 
 
-export const backend_Url = import.meta.env.VITE_BACKEND_URL
+// export const backend_Url = import.meta.env.VITE_BACKEND_URL
+export const backend_Url = 'https://twitter-clone-api-gold.vercel.app'
 
 
 // Axios setup
